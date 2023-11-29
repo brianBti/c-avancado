@@ -29,5 +29,50 @@
             }
             return this;
         }
+
+        public string DefinirSabor(string sabor)
+        {
+            if (sabor == "C")
+            {
+                Sabor = "Calabresa";
+            }
+            else if (sabor == "F")
+            {
+                Sabor = "Frango";
+            }
+            return Sabor;
+        }
+
+        public string DefinirTamanho(string tamanho)
+        {
+            switch (tamanho)
+            {
+                case "P":
+                    {
+                        TamanhoDePizza = TamanhoDePizza.Pequena;
+                        break;
+                    }
+                case "M":
+                    {
+                        TamanhoDePizza = TamanhoDePizza.Media;
+                        break;
+                    }
+                case "G":
+                    {
+                        TamanhoDePizza = TamanhoDePizza.grande;
+                        break;
+                    }
+                default:
+                    {
+                        throw new NotImplementedException();
+                    }
+            };
+            return Enum.GetName(TamanhoDePizza);
+      
+        }
+        public override string ToString()
+        {
+            return $"Sua Pizza é de sabor {Sabor} e tamanho é  de {TamanhoDePizza}";
+        }
     }
 }
